@@ -52,6 +52,10 @@ p {
 
 /* ヘッダー */
 
+#header {
+  background-color:teal-800;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -61,12 +65,15 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  font-style:italic;
 }
 
 #logo:hover {
-  color: #fff;
+  color: gray-600;
   text-decoration: none;
 }
+
+
 
 /* デバッグウインドウ */
 
