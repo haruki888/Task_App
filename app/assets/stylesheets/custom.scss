@@ -23,6 +23,7 @@ textarea {
   margin-bottom: 10px;
 }
 
+
 /* タイポグラフィ */
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,17 +33,20 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
+  font-style:italic;
+  fint-weight:bold;
+  
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 3.5em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: inherit;
 }
 
 p {
@@ -50,10 +54,22 @@ p {
   line-height: 1.7em;
 }
 
+.jumbotron h1 {
+  color: inhert;
+}
+
+.jumbotron {
+  backgroun-color: #eeeeee;
+}
+
+.form-control {
+  margin-bottom:10px;
+}
+
 /* ヘッダー */
 
-#header {
-  background-color:teal-800;
+.navbar-fixed-top {
+  background-color: teal;
 }
 
 #logo {
@@ -61,16 +77,24 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-  font-style:italic;
+  font-style: italic;
+  text-decoration-line: none;
 }
 
 #logo:hover {
-  color: gray-600;
-  text-decoration: none;
+  color: silver;
+}
+
+
+.navbar-default .navbar-nav > li a {
+  font-weight:bold;
+  color:#fff;
+  &:hover {
+    color:silver;
+  }
 }
 
 
