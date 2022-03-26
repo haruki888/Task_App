@@ -41,7 +41,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3.5em;
+  font-size: 3em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -59,10 +59,14 @@ p {
 }
 
 .jumbotron {
-  backgroun-color: #eeeeee;
+  background-color:#fff;
 }
 
 .form-control {
+  margin-bottom:10px;
+}
+
+.btn-success {
   margin-bottom:10px;
 }
 
