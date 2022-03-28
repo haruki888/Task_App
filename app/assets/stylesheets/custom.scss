@@ -73,7 +73,7 @@ p {
 /* ヘッダー */
 
 .navbar-fixed-top {
-  background-color: teal;
+  background-color: pink;
 }
 
 #logo {
@@ -98,10 +98,47 @@ p {
   color:#fff;
   &:hover {
     color:silver;
+  }  
+}
+
+li .dropdown-header {
+    background-color: rgba(200,200,200,0.5);
+    font-weight: bold;
+}
+
+.nav open>a {
+  border-color:#337ab7;
+}
+
+.dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.428571429;
+  color: #777777;
+  white-space: nowrap;
+}
+
+.dropdown-menu>li>a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.428571429;
+  color: #333333;
+  &:hover {
+    color:#262626;
+    background-color:#f5f5f5;
   }
 }
 
+#dropdown-title:active {
+    background-color: pink;
+}
 
+a {
+  text-decoration:none;
+}
 
 /* デバッグウインドウ */
 
