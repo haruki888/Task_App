@@ -1,4 +1,13 @@
 class TasksController < ApplicationController
-  def index
+  
+  def new
+    
   end
+  
+  def index
+    @tasks = @user.tasks
+  end
+  
+  
 end
+
