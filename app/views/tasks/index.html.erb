@@ -1,4 +1,4 @@
-<% provide(:title,@user.name) %>
+<% provide(:title, @user.name) %>
 
 <div class="container">
    <h1><%=@current_user.name %>のタスク一覧</h1> 
@@ -14,7 +14,6 @@
              </tr>
            </thead>
            <tbody>
-             <% tasks,each do |task| %> 
              <tr>
                <td>
                  <a id="task-name" task_path><%= @tasks %></a>
@@ -27,7 +26,6 @@
                  <a data-confirm="エラー解決をします。よろしいですか？"　class="btn btn-danger" rel="nofollow" data-method="delete" task_path>削除</a>
                </td>
              </tr>
-             <% end %>
          </table>
        </div>
      </div>
