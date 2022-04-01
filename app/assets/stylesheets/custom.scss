@@ -140,6 +140,26 @@ li.dropdown-header {
   }
 }
 
+/*ユーザー詳細ぺージ*/
+.active {
+  text-align:center;
+}
+
+h1 {
+  margin-bottom:30px;
+  margin-top:20px;
+  font-weihgt:200;
+}
+
+
+#table-user {
+  line-hight:1.428571429;
+}
+
+/*タスク一覧ぺージ*/
+.btn btn-danger > delete {
+  margin-top:2px;
+}
 
 /* デバッグウインドウ */
 

@@ -1,10 +1,10 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, @current_user.name) %>
 
 <div class="container">
    <h1><%=@current_user.name %>のタスク一覧</h1> 
      <div class = "row">
        <div class = "col-md-10 col-md-offset-1">
-        <a class="btn btn-lg btn-primary pull-right" new_task_path>タスク新規作成</a>
+        <a class="btn btn-lg btn-primary pull-right" new_user_task_path>タスク新規作成</a>
          <table class="table table-hover" id="table-tasks">
            <thead>
              <tr>
@@ -15,17 +15,15 @@
            </thead>
            <tbody>
              <tr>
-               <td>
-                 <a id="task-name" task_path><%= @tasks %></a>
-               </td>
-               <td><%= created_at %></td
-               <td>
-                 <a class="btn btn-success" edit_task_path>編集</a>
-               </td>
-               <td>
-                 <a data-confirm="エラー解決をします。よろしいですか？"　class="btn btn-danger" rel="nofollow" data-method="delete" task_path>削除</a>
-               </td>
-             </tr>
+                <td></td><a id="task-name" task_path><%= @tasks %></a></td>
+                
+                <td><%= @current_user.created_at.strftime("%Y年%m月%d日").to_s %></td>
+                
+                <td>
+                  <a class="btn btn-success btn-lg" edit_task_path>編集</a>
+                  <a class="btn btn-danger btn-lg"  data-method="delete" task_path>削除</a>
+                </td>
+              </tr>
          </table>
        </div>
      </div>
