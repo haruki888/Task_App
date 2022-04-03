@@ -15,7 +15,8 @@
            </thead>
            <tbody>
              <tr>
-                <td class="col-md-3><a id="task-name" task_path><%= @tasks %></a></td>
+               <% @tasks.each do |task| %>
+                <td class="col-md-3><a id="task-name" task_path><%= task.content %></a></td>
                 
                 <td class="col-md-5><%= @current_user.created_at.strftime("%Y年%m月%d日").to_s %></td>
                 
@@ -23,7 +24,8 @@
                   <a class="btn btn-success btn-lg" edit_task_path>編集</a>
                   <a class="btn btn-danger btn-lg"  data-method="delete" task_path>削除</a>
                 </td>
-              </tr>
+               <% end %>
+             </tr>
          </table>
        </div>
      </div>
