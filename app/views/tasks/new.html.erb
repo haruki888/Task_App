@@ -3,11 +3,11 @@
 
 <div class="row">
   <div class ="col-md-8 col-md-offset-2
-    <%=form_with(mobel:@task,local:true) do |f| %>
-      <%= f.label:"名称","label-singup" %>
-      <%= f.text_field:name,"forim-control" %>
-      <%= f.label:"詳細","lebel-singup" %>
-      <textarea></textarea>
+    <%=form_tag tasks_create_path do %>
+      <%= f.label:"名称", class:"label-singup" %>
+      <%= f.text_field:name, class:"form-control" %>
+      <%= f.label:"詳細", class:"lebel-singup" %><br>
+      <textarea rows="5" class:"form-control" name="content"></textarea><br>
       <%= f.submit "新規登録",class:"btn btn-lg btn-primary btn-signup" %>
     <% end %>
   </div>

@@ -18,7 +18,7 @@
           </tr>
           <tr>
             <th class="active">作成日</th>
-            <th><%= @current_user.created_at.strftime("%Y年%m月%d日").to_s %></th>
+            <th><%= @current_user.created_at.strftime("%Y年%m月%d日%H:%M").to_s %></th>
           </tr>          
         </tbody>
       </table>
