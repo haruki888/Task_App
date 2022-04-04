@@ -105,6 +105,11 @@ a:hover {
   font-weight:bold;
   color:#fff!important;
   line-height:20px;
+  &:hover {
+  text-decoration: none;
+  background-color:royalblue;
+  color:silver;
+  }
 }
 
 
@@ -140,7 +145,7 @@ li.dropdown-header {
   }
 }
 
-/*扶新規作成ページ*/
+/*新規作成ページ*/
 .form-control {
   display:block;
   width:100%;
@@ -159,6 +164,15 @@ textarea {
 
 textarea.form-control {
   height:auto;
+}
+
+/*ログインページ*/
+.label-login {
+  margin-top:5px;
+}
+
+.btn-login {
+  margin-top:10px;
 }
 
 /*ユーザー詳細ぺージ*/

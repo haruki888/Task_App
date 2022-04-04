@@ -10,6 +10,23 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+   
+  def login
+    @user = User.find_by(email:params[:email],password:params[:password])
+    if @user
+      session[:user_id] = @user.id
+      flash[:notice] = "ログインしました。"
+      redirect_to users_index_url
+    else
+      render :login_page
+    end
+  end 
+  
+  def logout 
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトしました。"
+    redirect_to login_url
+  end
   
   def create
     @user = User.new(user_params)
