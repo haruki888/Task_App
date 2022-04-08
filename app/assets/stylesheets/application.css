@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+/* ヘッダー */
+
+.navbar-fixed-top {
+  background-color: royalblue!important;
+}

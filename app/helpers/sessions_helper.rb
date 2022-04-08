@@ -1,5 +1,5 @@
 module SessionsHelper
-  
+  # 引数に渡されたユーザーオブジェクトでログインします。
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -16,12 +16,14 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
   
+   # セッションと@current_userを破棄します
   def log_out
     forget(current_user)
     session.delete(:user_id)
     @current_user = nil
   end
   
+  #現在ログイン中のユーザーがいる場合オブジェクトを返します。
   def current_user
     if (user_id = session[:user_id])
         @current_user ||= User.find_by(id:user_id) # x=x+1  → x+=1
@@ -34,7 +36,8 @@ module SessionsHelper
     end
   end
   
-  def logged_in? # 現在ログイン中のユーザーがいればtrue、そうでなければfalseを返します。
-    !current_user.nil?
+  # 現在ログイン中のユーザーがいればtrue、そうでなければfalseを返します。
+  def logged_in? 
+  　!current_user.nil?
   end
 end

@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery
-//= require bootstrap
+//= require jquery　　　# ドロップダウン機能を有効化するため
+//= require bootstrap   #　　　　　　　　〃　　　　　　　　　javaScriptライブラリを読み込ませる
 //= require turbolinks
 //= require_tree .
