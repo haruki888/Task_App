@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action:logged_in_user,only:[:show,:edit,:update] 
+  before_action:logged_in_user,only:[:index,:show,:edit,:update] 
   
   def show
     @user = User.find(params[:id])
@@ -40,6 +40,8 @@ class UsersController < ApplicationController
   def edit 
     @user=User.find(params[:id])
   end
+  
+  private
   
   def update 
     @user = User.find(params[:id])
