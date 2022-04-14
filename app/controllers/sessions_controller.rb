@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase) #ログインフォームから受け取ったemailの値を使ってユーザーオブジェクトを検索している
     if user && user.authenticate(params[:session][:password]) # &&は取得したユーザーオブジェクトが有効か判定する
-      log_in user
+      login user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to user
     else

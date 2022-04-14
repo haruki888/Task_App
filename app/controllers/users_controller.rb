@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
-  before_action:logged_in_user,only:[:index,:show,:edit,:update] 
+  before_action:set_user,only:[:show,:edit,:update,:destroy]
+  before_action:logged_in_user,only:[:index,:show,:edit,:update,:destroy] 
+  before_action:correct_user,only:[:edit,:update]
+  before_action:adimin_user,only: :destroy
   
   def show
-    @user = User.find(params[:id])
   end
   
   def new
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
       flash[:notice] = "ログインしました。"
       redirect_to users_index_url
     else
-      render :login_page
+      render :destroye
     end
   end 
   
@@ -38,10 +40,7 @@ class UsersController < ApplicationController
   end
   
   def edit 
-    @user=User.find(params[:id])
   end
-  
-  private
   
   def update 
     @user = User.find(params[:id])
@@ -55,10 +54,22 @@ class UsersController < ApplicationController
   
   private
   
-    def user_params
+  def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end     #requireというメソッドでPOSTで受け取る値のキー設定　
+  end     #requireというメソッドでPOSTで受け取る値のキー設定　
     　　    　#permitメソッドで許可して受け取る値を制限
-end         #その送られてくる情報は主に、「getのクエリパラメータ」or「POSTでformを使って送信されるデータ」。
+           #その送られてくる情報は主に、「getのクエリパラメータ」or「POSTでformを使って送信されるデータ」。
+  
+  # paramsハッシュからユーザーを取得します。
+  def set_user
+    @user=User.find(patams[:id])
+  end  
 
-
+  # ログイン済みのユーザーか確認します。
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger]= "ログインしてください。"
+      redirect_to login_url
+    end
+  end  

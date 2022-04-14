@@ -31,6 +31,32 @@ textarea {
 }
 
 
+/*ユーザー情報テーブル*/
+
+.user-table {
+  vertical-align:middle;
+  text-aligne:center;
+}
+
+/*入力ホーム*/
+
+.label-signup {
+  margin-top:5px;
+}
+
+.btn-signup {
+  margin-top:10px;
+}
+
+.label-user--edit {
+  margin-top:5px;
+} 
+
+.btn-user--edit {
+  margin-top:10px;
+}
+  
+  
 /* タイポグラフィ */
 
 h1, h2, h3, h4, h5, h6 {
@@ -81,6 +107,7 @@ p {
   margin-left:0;
 }
 
+/*header*/
 
 #logo {
   float: left;
@@ -96,6 +123,7 @@ p {
 
 #logo:hover {
   color: silver;
+  text-decoration:none;
 }
 
 
@@ -207,8 +235,8 @@ h1 {
   float: left;
   width: 100%;
   margin-top: 45px;
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box; /*WebKitベースのブラウザーすべて（Chrome、Safariなど）*/
+  -webkit-box-sizing: border-box; /* Firefox */
   box-sizing:         border-box;
 }
 
