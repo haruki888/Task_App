@@ -7,28 +7,42 @@
         <h1>TaskApp</h1>
         <p>TaskAppは簡易ToDo管理ツールです。</p>
         <p>↓↓初めてのご利用↓↓</p>
-        <button onclick="location.href='https://task-app-basic.herokuapp.com/signup'", class="btn btn-success btn-lg",new_user_path>アカウント作成</button><br>
-        <button onclick="location.href='https://task-app-basic.herokuapp.com/users/2'", class="btn btn-danger",>ゲストログイン（管理権限）</button>
-        <button onclick="location.href='https://task-app-basic.herokuapp.com/users/3'", class="btn btn-warning">ゲストログイン（一般権限）</button>
+        <% if logged_in? %>
+          <button onclick="location.href='https://task-app-basic.herokuapp.com/signup'", class="btn btn-success btn-lg",new_user_path>アカウント作成</button><br>
+          
+        <% else %>
+          <button onclick="location.href='https://task-app-basic.herokuapp.com/signup'", class="btn btn-success btn-lg",new_user_path>アカウント作成</button><br>
+          <button onclick="location.href='https://task-app-basic.herokuapp.com/users/2'", class="btn btn-danger",>ゲストログイン（管理権限）</button>
+          <button onclick="location.href='https://task-app-basic.herokuapp.com/users/3'", class="btn btn-warning">ゲストログイン（一般権限）</button>
+        <% end %>  
       </div>  
     </div>
     
     <div class="col-md-4">
-        <h2>ログイン</h2>
-        <%= form_with(model:@user,loval:true) do |f| %>
-        
-          <%= f.label:"メールアドレス", class:"lebel-signup" %>
-          <%= f.email_field :email, class:"form-control" %>
+        <h1>ログイン</h1>
+        <%= form_with(scope: :session,url:login_path,local:true) do |f| %>
+          <% if logged_in? %>
+            <label class="label-form" for="session_email">メールアドレス</label>
+            <input class="form-control" readonly="readonly" type="email" name="session[email]">
+            
+            <label class="label-form" for="session_password">パスワード</label>
+            <input class="form-control" readonly="readonly" type="password" name="session[password]">
+            
+            <%=f.submit "ログイン状態です", class:"btn btn-primary btn-block btn-login disabled" %>
+            
+          <% else %>  
+            <%= f.label:"メールアドレス", class:"label-login" %>
+            <%= f.email_field :email, class:"form-control" %>
+            
+            <%= f.label:"パスワード", class:"label-login" %>
+            <%= f.password_field :password, class:"form-control" %>
           
-          <%= f.label:"パスワード", class:"lebel-signup" %>
-          <%= f.password_field :password, class:"form-control" %>
-          
-          <%= f.label:remember_me,class:"checkbox inline checkbox-login",for:"remember-me" do %>
             <%= f.check_box:remember_me,id:"remember-me" %>
             <span>ログイン情報を記憶する</span>
-          <% end %> 
+            
           <%=f.submit "ログイン", class:"btn btn-primary btn-block btn-login" %>
-        <% end %>  
+        <% end %> 
+      <% end %>  
     </div>
   </div>  
 </div>
