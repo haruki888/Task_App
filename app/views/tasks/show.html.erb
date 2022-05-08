@@ -1,0 +1,35 @@
+<% provide(:title, @user.name) %>
+<div class="container">
+  <h1>タスク詳細</h1>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <table class="table table-bordered" id="table-task">
+        <tbody>
+          <tr>
+            <th class="active col-md-3">ID</th>
+            <th class="col-md-9"><%=@user.task %></th>
+          </tr>
+            <th class="active">名称</th>
+            <th><%=name %></th>
+          </tr>
+          <tr>
+            <th class="active">詳細</th>
+            <th><%=@user. description %></th>
+          </tr>
+          <tr>
+            <th class="active">作成日</th>
+            <th><%= @user.created_at.strftime("%Y年%m月%d日%H:%M").to_s %></th>
+          </tr> 
+           <tr>
+            <th class="active">更新日</th>
+            <th><%= @user.update_at.strftime("%Y年%m月%d日%H:%M").to_s %></th>
+          </tr>        
+        </tbody>
+      </table>
+      <td>
+        <%=link_to "編集", edit_user_task_path(@user.task), class:"btn btn-success btn-sm" %>
+        <%=link_to "削除", user_task_path(@user.task), method: :delete,data:{confirm}, class:"btn btn-dander btn-sm" %>
+      </td>
+    </div> 
+  </div>
+</div>

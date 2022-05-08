@@ -38,6 +38,16 @@ textarea {
   text-aligne:center;
 }
 
+/*ログインフォーム*/
+
+.label-login {
+  margin-top:5px;
+}
+
+.btn-login {
+  margin-top:10px;
+}
+
 /*入力ホーム*/
 
 .label-signup {
@@ -55,8 +65,8 @@ textarea {
 .btn-user--edit {
   margin-top:10px;
 }
-  
-  
+
+
 /* タイポグラフィ */
 
 h1, h2, h3, h4, h5, h6 {
@@ -73,7 +83,7 @@ h1 {
   
 }
 
-h2 {
+h2, h3 {
   font-size: 3em;
   letter-spacing: -1px;
   margin-bottom: 30px;
@@ -131,6 +141,10 @@ a:hover {
   color:#337ab7;;
 }
 
+* {
+  box-sizing:boder-box;
+}
+
 .navbar-default .navbar-nav > li > a {
   font-weight:bold;
   color:#fff!important;
@@ -138,10 +152,11 @@ a:hover {
   &:hover {
   text-decoration: none;
   background-color:royalblue;
-  color:silver;
+  color:silver!important;
   }
 }
 
+/*dropdown*/
 
 li.dropdown-header {
   background-color: rgba(200,200,200,0.5);
@@ -158,7 +173,7 @@ li.dropdown-header {
   font-weight:bold;
 }
 
-.dropdown-menu>li>a {
+.dropdown-menu > li > a {
   padding: 3px 20px;
   clear: both;
   font-weight: 400;
@@ -171,19 +186,28 @@ li.dropdown-header {
 }
 
 #dropdown-title {
-  color:#fff;
-  &:active {
+    color:#fff;
     background-color:royalblue!important;
-  }
 }
 
+.dropdown-menu:hover {
+  display: inline-block;
+  #dropdown-title {
+    backgroun-color:royalblue;
+  }  
+}  
+
 /*新規作成ページ*/
+
 .form-control {
   display:block;
   width:100%;
-  pading:6px 12px;
+  height:34px;
+  padding:6px 12px;
   font-size:14px;
-  line-height:1.4;
+  line-height:1.428571429;
+  color:#555555;
+  border:1px solid #ccc;
   border-radius:4px;
 }
 
@@ -222,11 +246,11 @@ h1 {
 }
 
 /*タスク一覧ぺージ*/
-.btn btn-danger > delete {
-  margin-top:2px;
+
+#table-tasks .btn {
+  display:inline-block;
+  margin:2px 0;
 }
-
-
 
 /* デバッグウインドウ */
 
