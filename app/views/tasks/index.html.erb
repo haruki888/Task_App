@@ -14,9 +14,9 @@
      <tbody>
        <% @tasks.each do |task| %>
          <tr>
-           <td class= "col-md-4"><%= link_to task.name, user_task_path(@user,task), id: "task-name" %></td>
-           <td class= "col-md-3"><%= l(task.created_at,format: :long) %></td>
-           <td class= "col-md-2"><%=link_to "編集", edit_user_task_path(@user,task),class: "btn btn-success" %>
+           <td class><%= link_to task.name, user_task_path(@user,task), id: "task-name" %></td>
+           <td class><%= l(task.created_at,format: :long) %></td>
+           <td class><%=link_to "編集", edit_user_task_path(@user,task),class: "btn btn-success" %>
                <%=link_to "削除", user_tasks_path(@user,task),class: "btn btn-danger" %>
            </td>
          </tr>
