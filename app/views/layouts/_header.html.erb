@@ -3,24 +3,24 @@
     <%= link_to "Task App", root_path, id:"logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "トップ", root_path %></li>
+        <li><%=link_to "トップ", root_path %></li>
          <% if logged_in? %>
-           <li><%= link_to "タスク作成", new_user_task_path(current_user) %></li>
+           <li><%=link_to "利用者一覧", users_path %></li>  <!--usersで複数だから(current_user)はいらない-->
+           <li><%=link_to "タスク作成", new_user_task_path(current_user) %></li>
            <li class="dropdown">
-             <a href="#" class="dropdown-toggle header-list" data-toggle="dropdown" id="dropdown-title"><%= current_user.name %><b class="caret"></b>
-             </a>
+             <a href="#" class="dropdown-toggle header-list" data-toggle="dropdown" id="dropdown-title"><%= current_user.name %><b class="caret"></b></a>
               <ul class="dropdown-menu">
-               <li class="dropdown-header">ユーザー</li>
-                 <li class><%= link_to "プロフィール", user_path(current_user) %></li>
-                 <li class><%= link_to "設定", edit_user_path(current_user) %></li>
-               <li class="dropdown-header">タスク</li>
-               <li class><%= link_to "タスク一覧",user_tasks_path(current_user) %></li>
-               <li class="divider"></li>  
-                 <li class><%= link_to "ログアウト", logout_path, method: :delete %></li>
+                <li class="dropdown-header">ユーザー</li>
+                <li class><%=link_to "プロフィール", user_path(current_user) %></li>
+                <li class><%=link_to "設定", edit_user_path(current_user) %></li>
+                <li class="dropdown-header">タスク</li>
+                <li class><%=link_to "タスク一覧", user_tasks_path(current_user) %></li>
+                <li class="divider"></li>
+                <li class><%=link_to "ログアウト", logout_path, method: :delete %></li>
               </ul>
            </li>   
          <% else %>
-          <li><%= link_to "ログイン", login_path %></li>
+           <li><%=link_to "ログイン", login_path %></li>
          <% end %>  
       </ul>
     </nav>
