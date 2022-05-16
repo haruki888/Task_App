@@ -28,8 +28,8 @@
         </tbody>
       </table>
       <td>
-        <%=link_to "編集", edit_user_task_path(@user, @task), class: "btn btn-success btn-sm" %>
-        <%=link_to "削除", user_task_path(@user, @task), method: :delete,data: { confirm: "削除します。よろしいですか？" }, class: "btn btn-dander btn-sm" %>
+        <%=link_to "編集", edit_user_task_path(@user, @task), class: "btn btn-success btn-lg" %>
+        <%=link_to "削除", user_task_path(@user, @task), method: :delete,data: { confirm: "削除します。よろしいですか？" }, class: "btn btn-danger btn-lg" %>
       </td>
     </div>
   </div>

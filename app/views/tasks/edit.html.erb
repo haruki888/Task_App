@@ -10,8 +10,8 @@
         <%= f.text_field:name, class: "form-control" %>
         <%= f.label:詳細, class: "label-form" %>
         <%= f.text_area:description, rows:5, class: "form-control" %>
-        <%= f.submit "更新",class: "btn btn-sm btn-primary btn-form" %>
-        <%= f.submit "キャンセル",class: "btn btn-sm btn-outline-dark" %>
+        <%= link_to "更新", user_task_path(@user, @task), class: "btn btn-sm btn-primary btn-form" %>
+        <%= link_to "キャンセル", user_tasks_path(@user, @task), class: "btn btn-sm btn-default btn-form" %>
       <% end %>
     </div>
   </div>  
