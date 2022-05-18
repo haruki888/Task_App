@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',        '5.1.6'
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'#has_secure_passwordが使用できるようになる
 gem 'faker'
 gem 'bootstrap-sass'
 gem 'will_paginate'

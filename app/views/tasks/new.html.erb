@@ -1,12 +1,12 @@
-<% provide(:title,'New Task') %>
+<% provide(:title, 'New Task') %>
 
   <h1>タスク新規作成</h1>
   
   <div class="row">
     <div class ="col-md-8 col-md-offset-2">
-      <%= form_with(model:@task,url:user_tasks_path(@user[:id]),local:true) do |f| %>
-        <%=render partial:'shared/error_messages',locals:{obj:@task} %>
-      
+      <%= form_with(model: @task,url:user_tasks_path(@user[:id]), local:true) do |f| %>
+        <%=render partial:'shared/error_messages',locals:{ obj:@task } %>
+
           <%= f.label:名称, class:"label-form" %>
           <%= f.text_field:name, class:"form-control" %>
           
@@ -17,3 +17,4 @@
       <% end %>
     </div>    
   </div>
+<!--form_withを使用している場合は、form_withに遷移先のurlを記載しているので、ボタンは、link_toを使わない-->

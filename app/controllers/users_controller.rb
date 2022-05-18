@@ -32,14 +32,16 @@ class UsersController < ApplicationController
   end
   
   def edit 
+    @user = User.find(params[:id])
   end
 
-  def update 
+  def update
+    @user = User.find(params[:id])
     if @user.update_attributes(user_params)    #user_paramsメソッドは、Usersコントローラーの内部でのみ実行される。
       flash[:success] = "ユーザー情報を更新しました。"
       redirect_to @user
     else
-      render:edit
+      render :edit
     end
   end 
   

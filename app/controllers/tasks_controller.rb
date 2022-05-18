@@ -26,12 +26,14 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find(params[:id])
   end
   
   def update
+    @task = Task.find(params[:id])
     if @task.update_attributes(task_params)
       flash[:success] = "タスクを更新しました。"
-      redirect_to user_task_url @user
+      redirect_to user_task_url(@user, @task)
     else
       render :edit
     end
@@ -40,7 +42,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy 
     flash[:success] = "タスクを削除しました。"
-    redirect_to user_tasks_url @user
+    redirect_to user_tasks_url (@user, @task)
   end
   
   private
